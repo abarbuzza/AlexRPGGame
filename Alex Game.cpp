@@ -212,6 +212,28 @@ int main(void)
 				}
 			}
 		}
+		while (quit) {
+			if (p == 1) {
+				cout << "Are you sure you want to quit?\nType ESC again to quit or Backspace to keep playing.\n";
+				p = 2;
+			 }
+			al_wait_for_event(event_queue, &ev);
+			if (ev.type == ALLEGRO_EVENT_KEY_DOWN)
+			{
+				switch (ev.keyboard.keycode)
+				{
+				case ALLEGRO_KEY_BACKSPACE:
+					quit = false;
+					cout << "Game resumed.\n";
+					break;
+				case ALLEGRO_KEY_ESCAPE:
+					done = true;
+					quit = false;
+					cout << "Goodbye!\n";
+					break;
+				}
+			}
+		}
 	}
 
 	MapFreeMem();
