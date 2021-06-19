@@ -1,0 +1,6 @@
+Get a character sprite sheet
+Set up inventory system
+Set up text boxes
+Set up main menu
+Set up save/load functionality
+Set up pause menu
